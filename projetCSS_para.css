@@ -396,7 +396,7 @@ h1{
 .button{
     position : relative ;
     z-index : 0 ;
-    width : 12vw ;
+    width : 10% ;
     height : 7vh ;
     text-decoration : none ;
     font-size : 14px ; 
@@ -405,6 +405,8 @@ h1{
     letter-spacing : 2px ;
     transition : all .3s ease ;
 }
+
+
 .button__text{
     display : flex ;
     justify-content : center ;
