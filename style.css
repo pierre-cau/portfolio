@@ -1093,6 +1093,25 @@ input:-webkit-autofill, textarea:-webkit-autofill {
         align-items: flex-start;
     }
 
+    .Timeline-content h2 {
+        font-size: 18px;
+    }
+
+    .Timeline-content p {
+        font-size: 12px;
+    }
+
+    .Timeline-content span {
+        font-size: 10px;
+    }
+
+    .Timeline-location {
+        top: 10px;
+        right: 10px;
+        padding: 3px 5px;
+        font-size: 10px;
+    }
+
     .List_Experiences {
         flex-direction: column;
         margin-left: auto;
@@ -1272,9 +1291,9 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     }
 
     .Info_Image img {
-        right: 78px;
-        bottom: 2px;
-        width: 230px;
+        right: 40px;
+        bottom: 0px;
+        width: 120px;
     }
 
     .Border_Title {
@@ -1298,6 +1317,25 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 
     .Infos p {
         font-size: 12px;
+    }
+
+    .Timeline-content h2 {
+        font-size: 15px;
+    }
+
+    .Timeline-content p {
+        font-size: 10px;
+    }
+
+    .Timeline-content span {
+        font-size: 8px;
+    }
+
+    .Timeline-location {
+        top: 10px;
+        right: 10px;
+        padding: 3px 5px;
+        font-size: 8px;
     }
 
     .List_Experiences {
