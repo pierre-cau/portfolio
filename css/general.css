@@ -1,0 +1,31 @@
+h1, h2, h3, h4 {
+  color: white;
+  text-align: center;
+  text-shadow: 13px 12px 15px black;
+}
+
+h1 {
+  margin: auto;
+  max-width: 600px;
+  padding-top: 17%;
+  letter-spacing: 20px;
+  font-weight: 400;
+}
+
+h2, h3 {
+  font-size: 300%;
+  letter-spacing: 20px;
+}
+
+h3 {
+  letter-spacing: 20px;
+}
+
+h4 {
+  padding-top: 20px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
