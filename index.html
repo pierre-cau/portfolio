@@ -419,4 +419,17 @@
         <p>Last update: 2024-10-21</p>
     </footer>
 </body>
+<script>
+    // Menu Mobile
+    function menuMobile() {
+        const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
+        const menuAct = document.querySelector(".Menu");
+
+        mobile.forEach(function(element) {
+            element.classList.toggle("active");
+        });
+        menuAct.classList.toggle("act");
+    }
+
+</script>
 </html>

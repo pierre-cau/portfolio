@@ -1,14 +1,3 @@
-// Menu Mobile
-function menuMobile() {
-    const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
-    const menuAct = document.querySelector(".Menu");
-
-    mobile.forEach(function(element) {
-        element.classList.toggle("active");
-    });
-    menuAct.classList.toggle("act");
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     // Menu Sticky
     const menu = document.querySelector(".Menu");
