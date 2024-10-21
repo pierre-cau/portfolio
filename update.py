@@ -6,7 +6,7 @@ from datetime import datetime
 from jinja2 import Environment, FileSystemLoader
 
 
-TEMPLATE_FILE = 'template.j2'
+TEMPLATE_FILE = 'assets/templates/template.j2'
 OUTPUT_FILE = 'index.html'
 
 def get_last_commit_date():

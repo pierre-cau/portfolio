@@ -10,7 +10,7 @@
     --button-color-focus: #0056b3;
     --font-family: "Inter", sans-serif;
     /* --profile-image: url('https://avatars.githubusercontent.com/u/93088668?v=4'); */
-    --profile-image: url('assets/img/icons/logo_remove_bg.png');
+    --profile-image: url('../img/icons/logo_remove_bg.png');
 
     --section-height: 630px;
     --default-height: 130px;
