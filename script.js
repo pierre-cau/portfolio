@@ -99,9 +99,3 @@ function openCV(lang) {
     // Close the CV buttons
     toggleCVButtons();
 }
-
-// Open the QR code in a new tab
-const photo = document.querySelector('.Photo');
-photo.addEventListener('click', function() {
-    window.open('https://pierre-cau.github.io/portfolio/documents/scan_me.pdf', '_blank');
-});
