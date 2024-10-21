@@ -103,5 +103,5 @@ function openCV(lang) {
 // Open the QR code in a new tab
 const photo = document.querySelector('.Photo');
 photo.addEventListener('click', function() {
-    window.open('./assets/pdf/communication.pdf', '_blank');
+    window.open('/assets/pdf/communication.pdf', '_blank');
 });
