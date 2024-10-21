@@ -10,11 +10,16 @@
     <script src="https://kit.fontawesome.com/84a3786002.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="language-switcher">
+        <button onclick="setLanguage('en')" data-lang="fr">EN</button>
+        <button onclick="setLanguage('fr')" data-lang="en">FR</button>
+    </div>
+
     <section class="Home">
         <div class="Menu">
             <h1><a href="https://github.com/pierre-cau" class="Logo"><img src="./assets/img/icons/logo_remove_bg.png" alt="Logo"></a></h1>
             <div class="Mobile_Bar" onclick="menuMobile()"><i class="fa-solid fa-bars"></i></div>
-            <ul class="Navigation">
+            <ul class="Navigation" data-lang="en">
                 <div class="AllNavigation">
                     <li><a href="#">Home</a></li>
                     <li><a href="#About">About</a></li>
@@ -23,14 +28,30 @@
                     <li><a href="#Contact">Contact</a></li>
                 </div>
             </ul>
+            <ul class="Navigation" data-lang="fr">
+                <div class="AllNavigation">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#About">A propos</a></li>
+                    <li><a href="#Experiences">Expériences</a></li>
+                    <li><a href="#Projects">Projets</a></li>
+                    <li><a href="#Contact">Contact</a></li>
+                </div>
+            </ul>
         </div>
 
         <div class="Content" data-anime="down">
-            <div class="Text">
+            <div class="Text" data-lang="en">
                 <h1>Pierre<br/>Cau</h1>
 
                 <p>Welcome to my personal website...<br>
                   <i>Why a crocodile ? Why not ?</i>
+                </p>
+            </div>
+            <div class="Text" data-lang="fr">
+                <h1>Pierre<br/>Cau</h1>
+
+                <p>Bienvenue sur mon site personnel...<br>
+                  <i>Pourquoi un crocodile ? Pourquoi pas ?</i>
                 </p>
             </div>
 
@@ -69,10 +90,11 @@
             <div class="Info_Text" data-anime="right">
                 <div class="About_Title">
                     <div class="Border_Title"></div>
-                    <h1>ABOUT ME</h1>
+                    <h1 data-lang="en">ABOUT ME</h1>
+                    <h1 data-lang="fr">A PROPOS DE MOI</h1>
                 </div>
 
-                <div class="Infos">
+                <div class="Infos" data-lang="en">
                     <h1>Hello, I'm Pierre Cau...</h1>
                     <p>a french engineering student at <b>"Ecole Centrale de Lyon"</b>.<br><br>
                       Roughly speaking, one could say that I'm a computer science student.
@@ -83,8 +105,19 @@
                       So if you're interested in my profile, <b>feel free to contact me !</b><br>
                     </p>
                 </div>
+                <div class="Infos" data-lang="fr">
+                    <h1>Bonjour, je suis Pierre Cau...</h1>
+                    <p>un étudiant ingénieur français à l'<b>"Ecole Centrale de Lyon"</b>.<br><br>
+                      À première vue, on pourrait dire que je suis un étudiant en informatique.
+                      Néanmoins, je suis tout aussi passioné par de nombreux autres domaines tels que la <b>physique</b>, les <b>mathématiques</b>, l'<b>électronique</b>, la <b>mécanique</b>, l'<b>électrique</b> et bien d'autres.
+                      Et puisque mon école est une école généraliste, j'étudie tous ces domaines en même temps !<br><br>
 
-                <button class="Info_Button" title="Download CV" onClick="window.open('./documents/CV.pdf')"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
+                      Je suis actuellement à la recherche d'un <b>stage de fin d'études</b> dans le domaine de l'<b>énergie</b>, à partir d'<b>avril 2025.</b><br>
+                      Alors si mon profil vous intéresse, <b>n'hésitez pas à me contacter !</b><br>
+                    </p>
+
+                <button class="Info_Button" title="Download CV" onClick="window.open('./documents/CV.pdf')" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
+                <button class="Info_Button" title="Télécharger CV" onClick="window.open('./documents/CV.pdf')" data-lang="fr"><i class="fa-solid fa-download"></i>TÉLÉCHARGER MON CV</button>
             </div>
         </div>
     </section>
@@ -98,10 +131,11 @@
             <div data-anime="top">
                 <div class="Main_Title">
                     <div class="Main_Border_Title"></div>
-                    <h1>EXPERIENCES</h1>
+                    <h1 data-lang="en">EXPERIENCES</h1>
+                    <h1 data-lang="fr">EXPÉRIENCES</h1>
                 </div>
     
-                <div class="Main_Text" data-anime="top">
+                <div class="Main_Text" data-anime="top" data-lang="en">
                   <p>
                     Throughout my academic journey at École Centrale de Lyon, I have gained diverse and valuable professional experience. 
                     My internships have sharpened my skills in energy systems, data visualization, and optimization. 
@@ -109,6 +143,13 @@
                     Additionally, a five-month internship allowed me to develop decision-support tools for network optimization, especially as a matter of load shedding plan optimization.
                   </p>
                 </div>
+                <div class="Main_Text" data-anime="top" data-lang="fr">
+                  <p>
+                    Tout au long de mon parcours académique à l'École Centrale de Lyon, j'ai acquis une expérience professionnelle diversifiée et précieuse. 
+                    Mes stages m'ont permis de perfectionner mes compétences en systèmes énergétiques, en visualisation de données et en optimisation. 
+                    Lors de mon stage de six mois, j'ai contribué aux tests d'un algorithme d'optimisation pour les défenses du réseau électrique et réalisé des analyses de sécurité au niveau européen. 
+                    De plus, un stage de cinq mois m'a permis de développer des outils d'aide à la décision pour l'optimisation des réseaux, notamment en matière d'optimisation des plans de délestage.
+                  </p>
             </div>
 
             <!-- <div class="List_Experiences">
@@ -131,12 +172,18 @@
                       </a>
                       <div class="Timeline-location" data-anime="left-slowness">
                         <i class="fa-solid fa-map-marker-alt"></i>
-                        <span>Brussels, Belgium</span>
+                        <span data-lang="en">Brussels, Belgium</span>
+                        <span data-lang="fr">Bruxelles, Belgique</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness">
+                      <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
                           <h2>6-month Internship - <b>CORESO</b></h2>
                           <p>Testing an optimization algorithm for remedial actions. Electrical security analyses at the European level.</p>
                           <span>January 2024 - June 2024</span>
+                      </div>
+                      <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                            <h2>Stage de 6 mois - <b>CORESO</b></h2>
+                            <p>Tests d'un algorithme d'optimisation pour les actions correctives. Analyses de sécurité électrique au niveau européen.</p>
+                            <span>Janvier 2024 - Juin 2024</span>
                       </div>
                   </div>
           
@@ -148,12 +195,18 @@
                       </a>
                       <div class="Timeline-location" data-anime="left-slowness">
                         <i class="fa-solid fa-map-marker-alt"></i>
-                        <span>Ajaccio, France</span>
+                        <span data-lang="en">Ajaccio, France</span>
+                        <span data-lang="fr">Ajaccio, France</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness">
+                      <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
                           <h2>5-month Internship - <b>EDF SEI</b></h2>
                           <p>Development of decision support tools, data visualization, and optimization of the electrical grid.</p>
                           <span>August 2023 - December 2023</span>
+                      </div>
+                      <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                            <h2>Stage de 5 mois - <b>EDF SEI</b></h2>
+                            <p>Développement d'outils d'aide à la décision, visualisation de données, et optimisation du réseau électrique.</p>
+                            <span>Août 2023 - Décembre 2023</span>
                       </div>
                   </div>
           
@@ -165,12 +218,18 @@
                     </a>
                     <div class="Timeline-location" data-anime="left-slowness">
                       <i class="fa-solid fa-map-marker-alt"></i>
-                      <span>Britanny, France</span>
+                      <span data-lang="en">Britanny, France</span>
+                      <span data-lang="fr">Bretagne, France</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness">
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
                         <h2>1-month Internship - <b>Carrefour</b></h2>
                         <p>Head of the drive-through service at a supermarket</p>
                         <span>July 2022 - August 2022</span>
+                    </div>
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                          <h2>Stage de 1 mois - <b>Carrefour</b></h2>
+                          <p>Responsable du service drive d'un supermarché</p>
+                          <span>Juillet 2022 - Août 2022</span>
                     </div>
                   </div>
 
@@ -182,12 +241,18 @@
                     </a>
                     <div class="Timeline-location" data-anime="left-slowness">
                       <i class="fa-solid fa-map-marker-alt"></i>
-                      <span>Lyon, France</span>
+                      <span data-lang="en">Lyon, France</span>
+                      <span data-lang="fr">Lyon, France</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness">
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
                         <h2>President of the sailing club - <b>Centrale Lyon</b></h2>
                         <p>Management of the club, organization of events, and training of new members.</p>
                         <span>2022 - 2023</span>
+                    </div>
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                          <h2>Président du club de voile - <b>Centrale Lyon</b></h2>
+                          <p>Gestion du club, organisation d'événements, et formation des nouveaux membres.</p>
+                          <span>2022 - 2023</span>
                     </div>
                   </div>
 
@@ -199,12 +264,18 @@
                     </a>
                     <div class="Timeline-location" data-anime="left-slowness">
                       <i class="fa-solid fa-map-marker-alt"></i>
-                      <span>Brittany, France</span>
+                      <span data-lang="en">Brittany, France</span>
+                      <span data-lang="fr">Bretagne, France</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness">
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
                         <h2>Sailing instructor - <b>FFV</b></h2>
                         <p>Training of young and old sailors, organization of regattas, and maintenance of the boats.</p>
                         <span>since 2019</span>
+                    </div>
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                          <h2>Moniteur de voile - <b>FFV</b></h2>
+                          <p>Formation des jeunes et moins jeunes navigateurs, organisation de régates, et entretien des bateaux.</p>
+                          <span>depuis 2019</span>
                     </div>
                   </div>
 
@@ -223,13 +294,20 @@
             <div data-anime="top">
                 <div class="Main_Title Alternative_Title" >
                     <div class="Main_Border_Title Alternative_Border"></div>
-                    <h1>ALL Projects</h1>
+                    <h1 data-lang="en">My Projects</h1>
+                    <h1 data-lang="fr">Mes Projets</h1>
                 </div>
     
-                <div class="Main_Text Alternative_Text">
+                <div class="Main_Text Alternative_Text" data-lang="en">
                     <p>
                         Here are some of the projects I have worked on during my studies. 
-                        These projects have allowed me to develop my skills in various fields such as <b>data science</b>,<b>business intelligence</b>, <b>web development</b>, and <b>signal processing</b>, among others.
+                        These projects have allowed me to develop my skills in various fields such as <b>data science</b>,<b>business intelligence</b>, <b>web development</b> and <b>signal processing</b>, among others.
+                    </p>
+                </div>
+                <div class="Main_Text Alternative_Text" data-lang="fr">
+                    <p>
+                        Voici quelques-uns des projets sur lesquels j'ai travaillé durant mes études. 
+                        Ces projets m'ont permis de développer mes compétences dans divers domaines tels que la <b>data science</b>, la <b>business intelligence</b>, le <b>développement web</b> et le <b>traitement du signal</b>, entre autres.
                     </p>
                 </div>
             </div>
@@ -237,23 +315,31 @@
             <div class="All_Projects">
                 <div class="Group_Service" data-anime="Service1">
                     <i class="fas fa-palette"></i>
-                    <h2>Sundao Project</h2>
-                    <p>This project, which was a 1st year project, aims to develop a business model around an java/kotlin application that allows users to connect each other and share cultural and sport activities.</p>
+                    <h2 data-lang="en">Sundao Project</h2>
+                    <h2 data-lang="fr">Projet Sundao</h2>
+                    <p data-lang="en">This project, which was a 1st year project, aims to develop a business model around an java/kotlin application that allows users to connect each other and share cultural and sport activities.</p>
                     </p>
+                    <p data-lang="fr">Ce projet, qui était un projet de 1ère année, vise à développer un modèle économique autour d'une application java/kotlin qui permet aux utilisateurs de se connecter entre eux et de partager des activités culturelles et sportives.</p>
                 </div>
 
                 <div class="Group_Service" data-anime="Service2">
                     <i class="fas fa-wheat-awn"></i>
-                    <h2>Echoblé Project</h2>
-                    <p>This project, commissioned by a French agricultural insurance company, aims to develop an innovative, non-intrusive solution for predicting farm production. Accurate crop yield forecasts enable farmers to make informed production and financial decisions, secure better terms in forward contracts, and confidently commit to delivering specific quantities of produce at predetermined prices.</p> 
+                    <h2 data-lang="en">Echoblé Project</h2>
+                    <h2 data-lang="fr">Projet Echoblé</h2>
+                    <p data-lang="en">This project, commissioned by a French agricultural insurance company, aims to develop an innovative, non-intrusive solution for predicting farm production. Accurate crop yield forecasts enable farmers to make informed production and financial decisions, secure better terms in forward contracts, and confidently commit to delivering specific quantities of produce at predetermined prices.</p> 
+                    <p data-lang="fr">Ce projet, commandé par une compagnie d'assurance agricole française (Groupama), vise à développer une solution innovante et non intrusive pour prédire la production agricole. Des prévisions précises de rendement des cultures permettent aux agriculteurs de prendre des décisions de production et financières éclairées, de sécuriser de meilleures conditions sur les contrats à terme, et de s'engager en toute confiance à livrer des quantités spécifiques de produits à des prix prédéterminés.</p>
                 </div>
 
                 <div class="Group_Service" data-anime="Service3">
                     <i class="fas fa-sailboat"></i>
-                    <h2>Fleety tracker</h2>
-                    <p>This project is a personal project that aims to develop a web application that allows users to track their fleet of boats.
+                    <h2 data-lang="en">Fleety tracker</h2>
+                    <h2 data-lang="fr">Fleety tracker</h2>
+                    <p data-lang="en">This project is a personal project that aims to develop a web application that allows users to track their fleet of boats.
                       I wanted to code this project to both improve my skills and connect easier skippers and owners of boats with potential crew members as skippers always need crew members and vice versa.
                       The application initially track the position of the "Yacht Club Classique" boats</p>
+                    <p data-lang="fr">Ce projet est un projet personnel qui vise à développer une application web qui permet aux utilisateurs de suivre leur flotte de bateaux.
+                        J'ai voulu coder ce projet à la fois pour améliorer mes compétences et pour connecter plus facilement les skippers/les propriétaires de bateaux avec des membres d'équipage potentiels. En effet, les skippers ont toujours besoin de membres d'équipage et vice versa.
+                        L'application suit initialement la position des bateaux du "Yacht Club Classique"</p>
                 </div>
             </div>
         </div>
@@ -267,7 +353,8 @@
         <div class="Main_Content" data-anime="top">
             <div class="Main_Title Adjust">
                 <div class="Main_Border_Title"></div>
-                <h1>CONTACT ME</h1>
+                <h1 data-lang="en">CONTACT ME</h1>
+                <h1 data-lang="fr">ME CONTACTER</h1>
             </div>
 
             <div class="Contact_Content">
@@ -281,21 +368,30 @@
     
                         <textarea name="message" placeholder="Message" required></textarea>
                     
-                        <button class="Contact_Button"><i class="fa-solid fa-comments"></i>SEND MESSAGE</button>
+                        <button class="Contact_Button" data-lang="en"><i class="fa-solid fa-comments"></i>SEND MESSAGE</button>
+                        <button class="Contact_Button" data-lang="fr"><i class="fa-solid fa-comments"></i>ENVOYER LE MESSAGE</button>
                     </form>
                 </div>
                 
                 <div class="Main_Text Adjustment">
-                    <p>I hope you enjoyed your visit to my website. If you have any questions or would like to contact me, please fill out the form below. 
+                    <p data-lang="en">I hope you enjoyed your visit to my website. If you have any questions or would like to contact me, please fill out the form below. 
                       I will get back to you as soon as possible.
                       <br><br>
                       You can also contact me via my social networks or download my CV or sending a mail to <a href="mailto:pcaupro@gmail.com">pcaupro@gmail.com</a>.
                     </p>
+                    <p data-lang="fr">J'espère que vous avez apprécié votre visite sur mon site web. Si vous avez des questions ou si vous souhaitez me contacter, veuillez remplir le formulaire ci-dessous. 
+                      Je vous répondrai dès que possible.
+                      <br><br>
+                      Vous pouvez également me contacter via mes réseaux sociaux ou télécharger mon CV ou en envoyant un mail à <a href="mailto:pcaupro@gmail.com">pcaupro@gmail.com</a>.
+                    </p>
 
                     <br>
                     <div class="Important_Note">
-                      <div class="Important_Note_Text">
+                      <div class="Important_Note_Text" data-lang="en">
                           <i class="fa-solid fa-exclamation-triangle"></i><span><strong>Note:</strong> The contact form is currently not functional. Please use the provided email or social media links to get in touch.</span>
+                      </div>
+                      <div class="Important_Note_Text" data-lang="fr">
+                            <i class="fa-solid fa-exclamation-triangle"></i><span><strong>Note :</strong> Le formulaire de contact n'est actuellement pas fonctionnel. Veuillez utiliser les liens de messagerie électronique ou de réseaux sociaux fournis pour me contacter.</span>
                       </div>
                     </div>
                 </div>

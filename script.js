@@ -1,33 +1,35 @@
 // Menu Sticky
 const menu = document.querySelector(".Menu");
-const closeMenu = document.querySelector(".Navigation");
+const closeMenu = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
 const removeAct = document.querySelector(".Menu");
 
 function menu_sticky() {
     const scroll = window.scrollY;
     if (scroll > 0) {
         menu.classList.add("sticky");
-        closeMenu.classList.remove("active");
+        closeMenu.forEach(function(element) {
+            element.classList.remove("active");
+        });
     } else {
         menu.classList.remove("sticky");
         removeAct.classList.remove("act");
-    };
-};
+    }
+}
 
-window.addEventListener('scroll', (function() {
+window.addEventListener('scroll', function() {
     menu_sticky();
-}));
-
+});
 
 // Menu Mobile
 function menuMobile() {
-    const mobile = document.querySelector(".Navigation");
+    const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
     const menuAct = document.querySelector(".Menu");
 
-    mobile.classList.toggle("active");
+    mobile.forEach(function(element) {
+        element.classList.toggle("active");
+    });
     menuAct.classList.toggle("act");
-};
-
+}
 
 // Debounce of Lodash
 const debounce = function(func, wait, immediate) {
@@ -36,15 +38,14 @@ const debounce = function(func, wait, immediate) {
         const context = this;
         const later = function() {
             timeout = null;
-            if(!immediate) func.apply(context, args)
+            if (!immediate) func.apply(context, args);
         };
         const callNow = immediate && !timeout;
         clearTimeout(timeout);
         timeout = setTimeout(later, wait);
-        if(callNow) func.apply(context, args);
+        if (callNow) func.apply(context, args);
     };
 };
-
 
 // Animate On Scroll
 const target = document.querySelectorAll('[data-anime]');
@@ -53,18 +54,32 @@ const animationClass = 'animate';
 function animeScroll() {
     const windowTop = window.scrollY + (window.innerHeight * 1);
     target.forEach(function(element) {
-        if((windowTop) > element.offsetTop) {
+        if (windowTop > element.offsetTop) {
             element.classList.add(animationClass);
         } else {
             element.classList.remove(animationClass);
         }
-    })
+    });
 }
 
-animeScroll();
+window.addEventListener('scroll', debounce(function() {
+    animeScroll();
+}, 200));
 
-if (target.length) {
-    window.addEventListener('scroll', debounce(function() {
-        animeScroll();
-    }, 50));
+
+// script.js
+function setLanguage(lang) {
+    const elements = document.querySelectorAll('[data-lang]');
+    elements.forEach(element => {
+        if (element.getAttribute('data-lang') === lang) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    });
 }
+
+// Set default language on page load
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage('en'); // Default to English
+});

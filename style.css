@@ -6,6 +6,8 @@
     --tertiary-color: white;
     --text-color: rgba(57, 57, 57, 0.78);
     --text-color-light: rgba(239, 239, 239, 0.78);
+    --button-color-hover: #007bff;
+    --button-color-focus: #0056b3;
     --font-family: "Inter", sans-serif;
     /* --profile-image: url('https://avatars.githubusercontent.com/u/93088668?v=4'); */
     --profile-image: url('assets/img/icons/logo_remove_bg.png');
@@ -54,6 +56,38 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
+}
+
+/* style.css */
+.language-switcher {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.language-switcher button {
+    z-index: 4;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--tertiary-color);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.language-switcher button:hover {
+    background-color: var(--button-color-hover);
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.language-switcher button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--button-color-focus);
 }
 
 section {
@@ -1102,13 +1136,6 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     }
 
     .Timeline-content span {
-        font-size: 10px;
-    }
-
-    .Timeline-location {
-        top: 10px;
-        right: 10px;
-        padding: 3px 5px;
         font-size: 10px;
     }
 
