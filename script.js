@@ -99,3 +99,11 @@ function openCV(lang) {
     // Close the CV buttons
     toggleCVButtons();
 }
+
+
+// we add a listener to the Photo class to open the github page
+
+const photo = document.querySelector('.Photo');
+photo.addEventListener('click', function() {
+    window.open('https://github.com/pierre-cau', '_blank');
+});

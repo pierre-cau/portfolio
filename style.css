@@ -313,6 +313,12 @@ section {
     z-index: 1;
 }
 
+.Photo:hover {
+    cursor: pointer;
+    transform: scale(1.2) rotate(10deg) translate(10px, 10px);
+    transition: var(--transition-duration);
+} 
+
 .Square1 {
     position: absolute;
     background-color: var(--primary-color);
