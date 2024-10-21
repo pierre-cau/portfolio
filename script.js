@@ -100,10 +100,8 @@ function openCV(lang) {
     toggleCVButtons();
 }
 
-
-// we add a listener to the Photo class to open the github page
-
+// Open the QR code in a new tab
 const photo = document.querySelector('.Photo');
 photo.addEventListener('click', function() {
-    window.open('https://github.com/pierre-cau', '_blank');
+    window.open('.assets/pdf/communication.pdf', '_blank');
 });
