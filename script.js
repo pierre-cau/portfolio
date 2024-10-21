@@ -101,3 +101,8 @@ function openCV(lang) {
     // Close the CV buttons
     toggleCVButtons();
 }
+
+document.addEventListener(document.getElementByClassName('Photo').addEventListener('click', function() {
+    url = "scan_me.html";
+    window.location.href = url;
+}));
