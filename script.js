@@ -4,6 +4,7 @@ const closeMenu = document.querySelectorAll(".Navigation"); // Use querySelector
 const removeAct = document.querySelector(".Menu");
 
 function menu_sticky() {
+    console.log("Menu Sticky");
     const scroll = window.scrollY;
     if (scroll > 0) {
         menu.classList.add("sticky");
@@ -22,12 +23,11 @@ window.addEventListener('scroll', function() {
 
 // Menu Mobile
 function menuMobile() {
+    console.log("Menu Mobile");
     const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
     const menuAct = document.querySelector(".Menu");
 
-    mobile.forEach(function(element) {
-        element.classList.toggle("active");
-    });
+    mobile.forEach(function(element) {element.classList.toggle("active");});
     menuAct.classList.toggle("act");
 }
 
