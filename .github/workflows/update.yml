@@ -24,7 +24,7 @@ jobs:
 
     - name: Update last commit date in HTML
       run: |
-        poetry run python update_date.py
+        python update_date.py
 
     - name: Commit and push changes
       run: |
