@@ -101,7 +101,10 @@ function openCV(lang) {
     // Close the CV buttons
     toggleCVButtons();
 }
-document.querySelector('.Photo').addEventListener('click', function() {
-    const url = "scan_me.html";
-    window.open(url, '_blank');
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.Photo').addEventListener('click', function() {
+        const url = "scan_me.html";
+        window.open(url, '_blank');
+    });
 });
