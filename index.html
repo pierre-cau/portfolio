@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/84a3786002.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="language-switcher">
+    <div class="language-switcher extra-buttons">
         <button onclick="setLanguage('en')" data-lang="fr" title="Passer en anglais">EN</button>
         <button onclick="setLanguage('fr')" data-lang="en" title="Switch to French">FR</button>
     </div>
@@ -116,8 +116,15 @@
                       Alors si mon profil vous intéresse, <b>n'hésitez pas à me contacter !</b><br>
                     </p>
                 </div>
-                <button class="Info_Button" title="Download CV" onClick="window.open('./documents/CV.pdf')" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
-                <button class="Info_Button" title="Télécharger CV" onClick="window.open('./documents/CV.pdf')" data-lang="fr"><i class="fa-solid fa-download"></i>TÉLÉCHARGER MON CV</button>
+                <button class="Info_Button" title="Download CV" onclick="toggleCVButtons()" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
+                <button class="Info_Button" title="Télécharger CV" onclick="toggleCVButtons()" data-lang="fr"><i class="fa-solid fa-download"></i>TÉLÉCHARGER MON CV</button>
+
+                <div id="cv-buttons" class="extra-buttons cv-buttons">
+                    <button onclick="openCV('en')">EN</button>
+                    <button onclick="openCV('fr')">FR</button>
+                </div>
+
+                
             </div>
         </div>
     </section>

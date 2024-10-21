@@ -67,6 +67,9 @@ window.addEventListener('scroll', debounce(function() {
 }, 200));
 
 
+animeScroll();
+
+
 // script.js
 function setLanguage(lang) {
     const elements = document.querySelectorAll('[data-lang]');
@@ -83,3 +86,16 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage('en'); // Default to English
 });
+
+// Print the choice of the CV language once the download button is clicked
+function toggleCVButtons() {
+    const cvButtons = document.getElementById('cv-buttons');
+    cvButtons.style.display = cvButtons.style.display === 'none' ? 'block' : 'none';
+}
+
+// Open the CV in a new tab
+function openCV(lang) {
+    window.open(`./documents/cv-${lang}.pdf`, '_blank');
+    // Close the CV buttons
+    toggleCVButtons();
+}
