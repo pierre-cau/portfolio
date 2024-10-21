@@ -3,7 +3,7 @@ name: Update Last Commit Date
 on:
   push:
     branches:
-      - 1-website-redisign
+      - main
 
 jobs:
   update-date:
