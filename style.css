@@ -17,7 +17,8 @@
     --default-width: 270px;
 
     --transition-duration: 0.7s;
-    --transition-ease: var(--transition-ease);
+    --transition-delay: 0.1s;
+    --transition-ease: linear;
 
     --border-radius: 48px;
 
@@ -108,7 +109,6 @@ body::-webkit-scrollbar-thumb {
 
 section {
     background-color: var(--secondary-color);
-    height: var(--section-height);
 }
 
 .Logo{
@@ -133,7 +133,11 @@ section {
     padding-bottom: var(--padding-large);
 }
 
-.Experiences{
+.Home {
+    height: var(--section-height);
+}
+
+.About .Contact .Experiences .Projects{
     height: auto !important;
     min-height: var(--section-height);
 }
@@ -935,7 +939,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 
 [data-anime] {
     opacity: 0;
-    transition: 1.2s;
+    transition: var(--transition-duration) var(--transition-ease);
 }
 
 [data-anime="top"] {
@@ -956,12 +960,12 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 
 [data-anime="left-slowness"] {
     transform: translate3d(-50px, 0, 0);
-    transition-delay: var(--transition-duration)
+    transition-delay: var(--transition-delay)
 }
 
 [data-anime="right-slowness"] {
     transform: translate3d(50px, 0, 0);
-    transition-delay: var(--transition-duration)
+    transition-delay: var(--transition-delay)
 }
 
 [data-anime="Service1"] {
@@ -1017,15 +1021,20 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 }
 
 @media (max-width: 837px) {
-    /*Tablet*/
-    section {
-        height: 100vh;
-    }
 
     .Content {
         flex-direction: column;
         height: 80vh;
         padding-top: 50px;
+    }
+
+    .Home {
+        height: 100vh;
+    }
+
+    .About .Contact .Experiences .Projects{
+        height: auto !important;
+        min-height: 100vh;
     }
 
     .Menu {
