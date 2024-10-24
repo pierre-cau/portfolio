@@ -95,6 +95,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .cv-buttons {
+    display: none;
     gap: 10px; /* Space between the buttons */
     margin-top: 10px;
     background-color: var(--secondary-color);
@@ -1092,12 +1093,29 @@ input:-webkit-autofill, textarea:-webkit-autofill {
         width: 100%;
         height: 100vh;
         background: #fff;
-        z-index: 99999;
+        z-index: 999;
         border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
 
+    .upward {
+        z-index : 9999;
+    }
+
+    .upward button {
+        color: var(--primary-color);
+        background-color: var(--tertiary-color);
+        transition: var(--transition-duration);
+    }
+
+    .upward button:hover {
+        background-color: var(--primary-color);
+        color: var(--tertiary-color);
+    }
+
+
     .active {
         display: block !important;
+        transition: var(--transition-duration);
     }
 
     .Navigation li:not(:last-child) {

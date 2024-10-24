@@ -139,7 +139,7 @@
                 <button class="Info_Button" title="Download CV" onclick="toggleCVButtons()" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
                 <button class="Info_Button" title="Télécharger CV" onclick="toggleCVButtons()" data-lang="fr"><i class="fa-solid fa-download"></i>TÉLÉCHARGER MON CV</button>
 
-                <div id="cv-buttons" class="extra-buttons cv-buttons">
+                <div id="cv-buttons" class="extra-buttons cv-buttons" style="display: none;">
                     <button onclick="openCV('en')">EN</button>
                     <button onclick="openCV('fr')">FR</button>
                 </div>
@@ -435,14 +435,18 @@
     function menuMobile() {
         const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
         const menuAct = document.querySelector(".Menu");
+        const lang_button_container = document.querySelector(".language-switcher");
         var lang = window.lang;
 
         mobile.forEach(function(element) {
-            if (element.classList.contains(lang)) {
+            target_lang = element.getAttribute("data-lang");
+            console.log(target_lang);
+            if (lang == target_lang) {
                 element.classList.toggle("active");
             }
         });
         menuAct.classList.toggle("act");
+        lang_button_container.classList.toggle("upward");
     }
 
 </script>

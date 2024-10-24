@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Menu Sticky
     const menu = document.querySelector(".Menu");
     const closeMenu = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
+    const lang_button_container = document.querySelector(".language-switcher");
     const removeAct = document.querySelector(".Menu");
 
     function menu_sticky() {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu.forEach(function(element) {
                 element.classList.remove("active");
             });
+            lang_button_container.classList.remove("upward");
         } else {
             menu.classList.remove("sticky");
             removeAct.classList.remove("act");
@@ -81,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Print the choice of the CV language once the download button is clicked
 function toggleCVButtons() {
+    console.log('toggleCVButtons'); 
     const cvButtons = document.getElementById('cv-buttons');
     cvButtons.style.display = cvButtons.style.display === 'none' ? 'block' : 'none';
 }
