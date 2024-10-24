@@ -60,9 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
 // script.js
 function setLanguage(lang) {
+    // Set the language globally
+    window.lang = lang;
     const elements = document.querySelectorAll('[data-lang]');
     elements.forEach(element => {
         if (element.getAttribute('data-lang') === lang) {

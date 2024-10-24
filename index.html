@@ -15,15 +15,13 @@
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MML8CXTD');</script>
-    <!-- End Google Tag Manager -->
 
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MML8CXTD"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    
+
     <div class="language-switcher extra-buttons">
         <button onclick="setLanguage('en')" data-lang="fr" title="Passer en anglais">EN</button>
         <button onclick="setLanguage('fr')" data-lang="en" title="Switch to French">FR</button>
@@ -429,7 +427,7 @@
     </section>
     
     <footer class="Footer">
-        <p>Copyright © 2024 <strong>CAU Pierre.</strong> All right reserved. Last update: 2024-10-21</p>
+        <p>Copyright © 2024 <strong>CAU Pierre.</strong> All right reserved. <i>Last update: 2024-10-23</i></p>
     </footer>
 </body>
 <script>
@@ -437,9 +435,12 @@
     function menuMobile() {
         const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
         const menuAct = document.querySelector(".Menu");
+        var lang = window.lang;
 
         mobile.forEach(function(element) {
-            element.classList.toggle("active");
+            if (element.classList.contains(lang)) {
+                element.classList.toggle("active");
+            }
         });
         menuAct.classList.toggle("act");
     }

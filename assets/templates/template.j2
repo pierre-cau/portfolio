@@ -435,9 +435,12 @@
     function menuMobile() {
         const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
         const menuAct = document.querySelector(".Menu");
+        var lang = window.lang;
 
         mobile.forEach(function(element) {
-            element.classList.toggle("active");
+            if (element.classList.contains(lang)) {
+                element.classList.toggle("active");
+            }
         });
         menuAct.classList.toggle("act");
     }
