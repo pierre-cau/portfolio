@@ -510,6 +510,10 @@ section {
     color: var(--secondary-color);
 }
 
+.Experiences p b {
+    color: var(--primary-color) !important;
+} 
+
 .cv-buttons{
     display: none;
 }
@@ -1111,7 +1115,6 @@ input:-webkit-autofill, textarea:-webkit-autofill {
         background-color: var(--primary-color);
         color: var(--tertiary-color);
     }
-
 
     .active {
         display: block !important;
