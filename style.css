@@ -510,7 +510,7 @@ section {
     color: var(--secondary-color);
 }
 
-.Experiences p b {
+.Experiences .Main_Text p b {
     color: var(--primary-color) !important;
 } 
 
