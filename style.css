@@ -130,6 +130,10 @@ section {
     padding: 0 var(--padding-medium) 80px var(--padding-medium);
 }
 
+.Experiences .Main_Text p b {
+    color: var(--primary-color) !important;
+} 
+
 .Experiences, .Contact {
     padding-bottom: var(--padding-large);
 }
@@ -509,10 +513,6 @@ section {
 .Infos p b {
     color: var(--secondary-color);
 }
-
-.Experiences .Main_Text p b {
-    color: var(--primary-color) !important;
-} 
 
 .cv-buttons{
     display: none;
