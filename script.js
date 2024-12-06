@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', debounce(function() {
         animeScroll();
-    }, 200));
+    }, 100));
     
     animeScroll();
 });

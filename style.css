@@ -16,8 +16,11 @@
     --default-height: 130px;
     --default-width: 270px;
 
-    --transition-duration: 0.7s;
-    --transition-delay: 0.1s;
+    --transition-duration: 0.5s;
+    --transition-delay: 0.02s;
+    --transition-delay-service1: 0.3s;
+    --transition-delay-servive2: 0.8s;
+    --transition-delay-service3: 1.3s;
     --transition-ease: linear;
 
     --border-radius: 48px;
@@ -977,17 +980,17 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 
 [data-anime="Service1"] {
     transform: translate3d(0, var(--padding-large), 0);
-    transition-delay: var(--transition-duration);
+    transition-delay: var(--transition-delay-service1);
 }
 
 [data-anime="Service2"] {
     transform: translate3d(0, var(--padding-large), 0);
-    transition-delay: 1.2s;
+    transition-delay: var(--transition-delay-servive2);
 }
 
 [data-anime="Service3"] {
     transform: translate3d(0, var(--padding-large), 0);
-    transition-delay: 1.7s;
+    transition-delay: var(--transition-delay-service3);
 }
 
 [data-anime].animate {
