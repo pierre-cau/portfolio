@@ -65,14 +65,75 @@ body::-webkit-scrollbar-thumb {
 /* style.css */
 .language-switcher {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.current-language {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.current-language:hover {
+    background-color: var(--button-color-hover);
+}
+
+.language-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 4px;
+    background-color: var(--tertiary-color);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    overflow: hidden;
+}
+
+.language-menu.show {
+    display: block;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: var(--primary-color);
+}
+
+.language-option:hover {
+    background-color: var(--secondary-color);
+}
+
+.flag {
+    font-size: 18px;
+}
+
+.lang-text {
+    font-size: 14px;
 }
 
 .extra-buttons {
     z-index: 4;
+}
+
+@media (max-width: 837px) {
+    .language-switcher {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
 }
 
 .extra-buttons button {

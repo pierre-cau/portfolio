@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Menu Sticky
     const menu = document.querySelector(".Menu");
-    const closeMenu = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
+    const closeMenu = document.querySelectorAll(".Navigation");
     const lang_button_container = document.querySelector(".language-switcher");
     const removeAct = document.querySelector(".Menu");
+
+    // Initialisation de la langue
+    window.lang = 'en';
+    setLanguage('en');
 
     function menu_sticky() {
         const scroll = window.scrollY;
@@ -59,45 +63,68 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100));
     
     animeScroll();
+
+    // Close language menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const languageMenu = document.querySelector('.language-menu');
+        if (!e.target.closest('.language-switcher')) {
+            languageMenu.classList.remove('show');
+        }
+    });
+
+    // Photo click handler
+    document.querySelector('.Photo').addEventListener('click', function() {
+        window.open("scan_me.html", '_blank');
+    });
 });
 
+// Language Switcher
+function toggleLanguageMenu() {
+    const menu = document.querySelector('.language-menu');
+    menu.classList.toggle('show');
+}
 
-// script.js
 function setLanguage(lang) {
-    // Set the language globally
     window.lang = lang;
     const elements = document.querySelectorAll('[data-lang]');
+    
     elements.forEach(element => {
         if (element.getAttribute('data-lang') === lang) {
-            element.style.display = 'block';
+            element.style.display = '';
         } else {
             element.style.display = 'none';
         }
     });
+
+    // Fermer le menu après la sélection
+    const menu = document.querySelector('.language-menu');
+    menu.classList.remove('show');
 }
 
-// Set default language on page load
-document.addEventListener('DOMContentLoaded', () => {
-    setLanguage('en'); // Default to English
-});
-
-// Print the choice of the CV language once the download button is clicked
+// CV Management
 function toggleCVButtons() {
-    console.log('toggleCVButtons'); 
     const cvButtons = document.getElementById('cv-buttons');
-    cvButtons.style.display = cvButtons.style.display === 'none' ? 'block' : 'none';
+    cvButtons.style.display = cvButtons.style.display === 'none' ? 'flex' : 'none';
 }
 
-// Open the CV in a new tab
 function openCV(lang) {
     window.open(`./documents/cv-${lang}.pdf`, '_blank');
-    // Close the CV buttons
     toggleCVButtons();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.Photo').addEventListener('click', function() {
-        const url = "scan_me.html";
-        window.open(url, '_blank');
+// Mobile Menu
+function menuMobile() {
+    const mobile = document.querySelectorAll(".Navigation");
+    const menuAct = document.querySelector(".Menu");
+    const lang_button_container = document.querySelector(".language-switcher");
+    const lang = window.lang;
+
+    mobile.forEach(function(element) {
+        const target_lang = element.getAttribute("data-lang");
+        if (lang === target_lang) {
+            element.classList.toggle("active");
+        }
     });
-});
+    menuAct.classList.toggle("act");
+    lang_button_container.classList.toggle("upward");
+}
