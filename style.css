@@ -65,10 +65,10 @@ body::-webkit-scrollbar-thumb {
 /* style.css */
 .language-switcher {
     position: fixed;
-    top: 20px;
-    right: 80px; /* Moved away from the burger menu */
-    z-index: 9999; /* Higher z-index to ensure it's above other elements */
-    background-color: var(--secondary-color);
+    top: 35px;
+    right: 150px; /* Plus loin du bouton hamburger */
+    z-index: 99999; /* Z-index plus élevé pour être sûr qu'il soit au-dessus de tout */
+    background-color: transparent;
     border-radius: 6px;
     padding: 2px;
 }
@@ -83,6 +83,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .current-language:hover {
@@ -99,7 +100,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: none;
     overflow: hidden;
-    z-index: 9999; /* Match parent z-index */
+    z-index: 999999; /* Match parent z-index */
 }
 
 .language-menu.show {
@@ -134,9 +135,13 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 837px) {
     .language-switcher {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
+        top: 20px;
+        right: 80px; /* Garde une distance avec le bouton hamburger */
+        bottom: auto;
+    }
+
+    .Menu {
+        padding-right: 120px; /* Espace pour le sélecteur de langue */
     }
 }
 
