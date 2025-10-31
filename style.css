@@ -66,8 +66,11 @@ body::-webkit-scrollbar-thumb {
 .language-switcher {
     position: fixed;
     top: 20px;
-    right: 20px;
-    z-index: 1000;
+    right: 80px; /* Moved away from the burger menu */
+    z-index: 9999; /* Higher z-index to ensure it's above other elements */
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+    padding: 2px;
 }
 
 .current-language {
@@ -96,6 +99,7 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: none;
     overflow: hidden;
+    z-index: 9999; /* Match parent z-index */
 }
 
 .language-menu.show {
