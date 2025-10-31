@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialisation de la langue
+    window.lang = 'en';
+
     // Menu Sticky
     const menu = document.querySelector(".Menu");
     const closeMenu = document.querySelectorAll(".Navigation");
     const lang_button_container = document.querySelector(".language-switcher");
     const removeAct = document.querySelector(".Menu");
-
-    // Initialisation de la langue
-    window.lang = 'en';
+    
+    // Appliquer la langue après que les éléments DOM sont disponibles
     setLanguage('en');
 
     function menu_sticky() {
@@ -98,7 +100,9 @@ function setLanguage(lang) {
 
     // Fermer le menu après la sélection
     const menu = document.querySelector('.language-menu');
-    menu.classList.remove('show');
+    if (menu) { // Vérifier si le menu existe avant d'accéder à classList
+        menu.classList.remove('show');
+    }
 }
 
 // CV Management
