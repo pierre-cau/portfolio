@@ -143,6 +143,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Gestion commune des médias queries */
+/* Mode portrait et petits écrans */
 @media screen and (orientation: portrait), (max-width: 837px) {
     .language-switcher {
         top: 20px;
@@ -183,16 +184,72 @@ body::-webkit-scrollbar-thumb {
     }
 }
 
-/* Ajustements spécifiques pour très petits écrans */
-@media screen and (max-width: 400px) {
+/* Mode paysage optimisé */
+@media screen and (orientation: landscape) {
+    .Content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: calc(100vh - 100px);
+        padding: 0 5%;
+    }
+
+    .Text {
+        margin-right: 5%;
+        flex: 1;
+    }
+
+    .Image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
     .language-switcher {
-        right: 60px;
-        transform: scale(0.85);
+        top: 20px;
+        right: 100px;
+    }
+
+    .Menu {
+        padding: 20px 50px;
+    }
+
+    .Timeline-container {
+        padding: 0 5%;
+    }
+
+    .Timeline-item {
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+
+    .Timeline-content {
+        flex: 1;
+    }
+
+    .All_Projects {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 5%;
+        gap: 20px;
+    }
+
+    .Group_Service {
+        flex: 1;
+        min-width: 250px;
     }
 }
 
-/* Gestion spécifique de l'orientation paysage */
+/* Ajustements pour écrans paysage très courts */
 @media screen and (orientation: landscape) and (max-height: 500px) {
+    .Content {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
     .language-switcher {
         top: 15px;
         right: 80px;
@@ -200,8 +257,23 @@ body::-webkit-scrollbar-thumb {
     }
 
     .Menu {
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding: 10px 40px;
+    }
+
+    .Photo, .Square1, .Square2 {
+        transform: scale(0.8);
+    }
+
+    .Social_Medias {
+        transform: scale(0.9);
+    }
+}
+
+/* Très petits écrans */
+@media screen and (max-width: 400px) {
+    .language-switcher {
+        right: 60px;
+        transform: scale(0.85);
     }
 }
 
