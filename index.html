@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, ini                      Through my three previous internships in the energy sector at <b>EDF SEI</b>, <b>CORESO</b>, and <b>RTE</b>, I have discovered a field that I find <b>incredibly inspiring</b>. 
-                      This sector, with its <b>complex technical challenges</b> and <b>societal impact</b>, plays a crucial role in shaping our future. 
-                      The energy transition represents both a <b>monumental challenge</b> and an <b>extraordinary opportunity</b>. I am deeply motivated to contribute to innovative solutions that will help build a more sustainable and efficient energy system.l-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pierre CAU</title>
     <link rel="stylesheet" href="/portfolio/style.css">
     <link rel="icon" href="/portfolio/assets/img/icons/logo_remove_bg_zoomed.png" type="image/png">
@@ -17,7 +15,77 @@
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MML8CXTD');</script>
+    <style>
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
 
+        .language-switcher.upward {
+            top: 30px;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background-color: var(--background);
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .current-language:hover {
+            background-color: var(--primary);
+            color: var(--background);
+        }
+
+        .language-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: var(--background);
+            border: 1px solid var(--primary);
+            border-radius: 5px;
+            margin-top: 5px;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .language-menu.show {
+            display: block;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: var(--primary);
+        }
+
+        .language-option:hover {
+            background-color: var(--primary);
+            color: var(--background);
+        }
+
+        .flag {
+            font-size: 1.2em;
+        }
+
+        .lang-text {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -129,7 +197,7 @@
                       Nonetheless, I'm also interested in many other fields such as <b>physics</b>, <b>mathematics</b>, <b>electronics</b>, <b>mechanics</b> and so on.
                       Indeed, since my school is a generalist one, I'm studying all these fields at the same time !<br><br>
                     
-                      Recently, I've delved into the world of energy through my three previous internships, which I found <b>incredibly inspiring</b>. 
+                      Recently, I've delved into the world of energy through my two previous internships, which I found <b>incredibly inspiring</b>. 
                       This field, with its <b>complex challenges</b> and <b>transformative potential</b>, represents a crucial sector for the future. 
                       The energy transition is a <b>monumental shift</b>, and I am deeply motivated to be part of this movement, contributing to the solutions that will shape tomorrow’s world.<br><br>
                     </p>
@@ -141,9 +209,9 @@
                       Néanmoins, je suis tout aussi passioné par de nombreux autres domaines tels que la <b>physique</b>, les <b>mathématiques</b>, l'<b>électronique</b>, la <b>mécanique</b>, l'<b>électrique</b> et bien d'autres encore.
                       Puisque mon école est une école généraliste, j'étudie en réalité tous ces domaines en même temps !<br><br>
 
-                      À travers mes trois précédents stages dans le secteur de l'énergie chez <b>EDF SEI</b>, <b>CORESO</b>, et <b>RTE</b>, j'ai découvert un domaine que je trouve <b>passionnant</b>.
-                      Ce secteur, avec ses <b>défis techniques complexes</b> et son <b>impact sociétal</b>, joue un rôle crucial dans la construction de notre avenir.
-                      La transition énergétique représente à la fois un <b>défi monumental</b> et une <b>opportunité extraordinaire</b>. Je suis profondément motivé à contribuer aux solutions innovantes qui aideront à construire un système énergétique plus durable et efficace.<br><br>
+                      À travers mes trois stages précédents dans le secteur de l'énergie chez <b>EDF SEI</b>, <b>CORESO</b> et <b>RTE</b>, j'ai découvert un domaine que je trouve <b>incroyablement inspirant</b>.
+                      Ce secteur, avec ses <b>défis techniques complexes</b> et son <b>impact sociétal</b>, joue un rôle crucial dans l'élaboration de notre avenir.
+                      La transition énergétique représente à la fois un <b>défi monumental</b> et une <b>opportunité extraordinaire</b>. Je suis profondément motivé à contribuer aux solutions innovantes qui aideront à construire un système énergétique plus durable et plus efficace.<br><br>
                     </p>
                 </div>
                 <button class="Info_Button" title="Download CV" onclick="toggleCVButtons()" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
@@ -175,19 +243,19 @@
                 <div class="Main_Text" data-anime="top" data-lang="en">
                   <p>
                     Throughout my academic journey at École Centrale de Lyon, I have gained diverse and valuable professional experience in the energy sector. 
-                    My internships have sharpened my skills in energy systems, power grid optimization, and data analysis. 
-                    My current thesis internship at <b>RTE</b> focuses on analyzing the impact of interconnections on Joule losses in the French transmission network, contributing to grid efficiency optimization. 
-                    Previously at <b>CORESO</b>, I tested optimization algorithms for electrical grid defenses and performed security analyses at the European level. 
-                    Additionally, my internship at <b>EDF SEI</b> allowed me to develop decision-support tools for network optimization, particularly in load shedding plan optimization.
+                    My internships have significantly enhanced my expertise in power systems, data analysis, and optimization techniques.
+                    At CORESO, during a six-month internship, I contributed to testing an optimization algorithm for electrical grid defenses and performed security analyses at the European level.
+                    Previously, at EDF SEI, I spent five months developing decision-support tools for network optimization, particularly focusing on load shedding plans.
+                    Additionally, my experience at RTE allowed me to work on automating electrical security analyses and optimizing calculation performance.
                   </p>
                 </div>
                 <div class="Main_Text" data-anime="top" data-lang="fr">
                   <p>
-                    Tout au long de mon parcours académique à l'École Centrale de Lyon, j'ai acquis une expérience professionnelle diversifiée et précieuse dans le secteur de l'énergie. 
-                    Mes stages m'ont permis de perfectionner mes compétences en systèmes électriques, en optimisation des réseaux électriques et en analyse de données. 
-                    Mon stage de fin d'études actuel chez <b>RTE</b> se concentre sur l'analyse de l'impact des interconnexions sur les pertes Joule du réseau de transport français, contribuant à l'optimisation de l'efficacité du réseau. 
-                    Auparavant chez <b>CORESO</b>, j'ai contribué aux tests d'un algorithme d'optimisation des parades électriques et réalisé des analyses de sécurité au niveau européen. 
-                    De plus, mon stage chez <b>EDF SEI</b> m'a permis de développer des outils d'aide à la décision pour l'optimisation du réseau, notamment en matière de plans de délestage.
+                    Tout au long de mon parcours académique à l'École Centrale de Lyon, j'ai acquis une expérience professionnelle diversifiée et précieuse dans le secteur de l'énergie.
+                    Mes stages m'ont permis de développer significativement mon expertise en systèmes électriques, analyse de données et techniques d'optimisation.
+                    Chez CORESO, lors d'un stage de six mois, j'ai contribué aux tests d'un algorithme d'optimisation des parades électriques et réalisé des analyses de sécurité au niveau européen.
+                    Auparavant, chez EDF SEI, j'ai passé cinq mois à développer des outils d'aide à la décision pour l'optimisation du réseau, en particulier sur les plans de délestage.
+                    De plus, mon expérience chez RTE m'a permis de travailler sur l'automatisation des analyses de sécurité électrique et l'optimisation des performances des calculs.
                   </p>
             </div>
 
@@ -200,11 +268,34 @@
             <div class="Timeline" id="Experiences">
               <div class="Timeline-container">
                   
-                <!-- Trait vertical ajouté manuellement -->
-                <div class="Timeline-line" data-anime="left-slowness"></div>
+                  <!-- Trait vertical ajouté manuellement -->
+                  <div class="Timeline-line" data-anime="left-slowness"></div>
+          
+                  <div class="Timeline-item" data-anime="left-slowness">
+                      <a href="https://www.rte-france.com/" target="_blank">
+                        <div class="Timeline-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/RTE_logo.svg/2048px-RTE_logo.svg.png" alt="RTE">
+                        </div>
+                      </a>
+                      <div class="Timeline-location" data-anime="left-slowness">
+                        <i class="fa-solid fa-map-marker-alt"></i>
+                        <span data-lang="en">Lyon, France</span>
+                        <span data-lang="fr">Lyon, France</span>
+                      </div>
+                      <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                          <h2>6-month Internship - <b>RTE</b></h2>
+                          <p>Study of electrical losses reduction and analysis of the relationship between Joule losses in the French transmission network and cross-border exchanges.</p>
+                          <span>April 2025 - September 2025</span>
+                      </div>
+                      <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                            <h2>Stage de 6 mois - <b>RTE</b></h2>
+                            <p>Étude de la réduction des pertes électriques et analyse du lien entre les pertes Joule sur le réseau de transport français et les échanges aux frontières.</p>
+                            <span>Avril 2025 - Septembre 2025</span>
+                      </div>
+                  </div>
 
-                <div class="Timeline-item" data-anime="left-slowness">
-                    <a href="https://www.rte-france.com/" target="_blank">
+                  <div class="Timeline-item" data-anime="left-slowness">
+                      <a href="https://www.coreso.eu/" target="_blank">
                         <div class="Timeline-logo">
                             <img src="https://www.coreso.eu/wp-content/themes/coreso/images/logo-coreso-pos.png" alt="CORESO">
                         </div>
@@ -295,28 +386,28 @@
                     </div>
                   </div>
 
-                <div class="Timeline-item" data-anime="left-slowness">
-                <a href="https://www.ffvoile.fr" target="_blank">
-                    <div class="Timeline-logo">
-                        <img src="https://www.ffvoile.fr//ffv/web/AdminNews/multimedia/galeries/ffvoile_2012/minis/FFVoile.jpg" alt="FFV">
+                  <div class="Timeline-item" data-anime="left-slowness">
+                    <a href="https://www.ffvoile.fr" target="_blank">
+                      <div class="Timeline-logo">
+                          <img src="https://www.ffvoile.fr//ffv/web/AdminNews/multimedia/galeries/ffvoile_2012/minis/FFVoile.jpg" alt="FFV">
+                      </div>
+                    </a>
+                    <div class="Timeline-location" data-anime="left-slowness">
+                      <i class="fa-solid fa-map-marker-alt"></i>
+                      <span data-lang="en">Brittany, France</span>
+                      <span data-lang="fr">Bretagne, France</span>
                     </div>
-                </a>
-                <div class="Timeline-location" data-anime="left-slowness">
-                    <i class="fa-solid fa-map-marker-alt"></i>
-                    <span data-lang="en">Brittany, France</span>
-                    <span data-lang="fr">Bretagne, France</span>
-                </div>
-                <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
-                    <h2>Sailing instructor - <b>FFV</b></h2>
-                    <p>Training of young and old sailors, organization of regattas, and maintenance of the boats.</p>
-                    <span>since 2019</span>
-                </div>
-                <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
-                        <h2>Moniteur de voile - <b>FFV</b></h2>
-                        <p>Formation des jeunes et moins jeunes navigateurs, organisation de régates, et entretien des bateaux.</p>
-                        <span>depuis 2019</span>
-                </div>
-                </div>
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                        <h2>Sailing instructor - <b>FFV</b></h2>
+                        <p>Training of young and old sailors, organization of regattas, and maintenance of the boats.</p>
+                        <span>since 2019</span>
+                    </div>
+                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                          <h2>Moniteur de voile - <b>FFV</b></h2>
+                          <p>Formation des jeunes et moins jeunes navigateurs, organisation de régates, et entretien des bateaux.</p>
+                          <span>depuis 2019</span>
+                    </div>
+                  </div>
 
               </div>
           </div>
@@ -439,26 +530,64 @@
     </section>
     
     <footer class="Footer">
-        <p>Copyright © 2024 <strong>CAU Pierre.</strong> All right reserved. <i>Last update: 2025-10-21</i></p>
+        <p>Copyright © 2024 <strong>CAU Pierre.</strong> All right reserved. <i>Last update: 2025-10-31</i></p>
     </footer>
 </body>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialisation de la langue
+        window.lang = 'en';
+
+        // Menu Sticky
+        const menu = document.querySelector(".Menu");
+        const closeMenu = document.querySelectorAll(".Navigation");
+        const lang_button_container = document.querySelector(".language-switcher");
+        const removeAct = document.querySelector(".Menu");
+        
+        // Appliquer la langue initiale
+        setLanguage('en');
+    });
+
     // Menu Mobile
     function menuMobile() {
-        const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
+        const mobile = document.querySelectorAll(".Navigation");
         const menuAct = document.querySelector(".Menu");
         const lang_button_container = document.querySelector(".language-switcher");
-        var lang = window.lang;
+        const lang = window.lang;
 
         mobile.forEach(function(element) {
-            target_lang = element.getAttribute("data-lang");
-            console.log(target_lang);
-            if (lang == target_lang) {
+            const target_lang = element.getAttribute("data-lang");
+            if (lang === target_lang) {
                 element.classList.toggle("active");
             }
         });
         menuAct.classList.toggle("act");
         lang_button_container.classList.toggle("upward");
+    }
+
+    // Language Switcher
+    function toggleLanguageMenu() {
+        const menu = document.querySelector('.language-menu');
+        menu.classList.toggle('show');
+    }
+
+    function setLanguage(lang) {
+        window.lang = lang;
+        const elements = document.querySelectorAll('[data-lang]');
+        
+        elements.forEach(element => {
+            if (element.getAttribute('data-lang') === lang) {
+                element.style.display = '';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+
+        // Fermer le menu après la sélection
+        const menu = document.querySelector('.language-menu');
+        if (menu) {
+            menu.classList.remove('show');
+        }
     }
 
 </script>
