@@ -17,7 +17,77 @@
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MML8CXTD');</script>
+    <style>
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
 
+        .language-switcher.upward {
+            top: 30px;
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background-color: var(--background);
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .current-language:hover {
+            background-color: var(--primary);
+            color: var(--background);
+        }
+
+        .language-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: var(--background);
+            border: 1px solid var(--primary);
+            border-radius: 5px;
+            margin-top: 5px;
+            min-width: 150px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .language-menu.show {
+            display: block;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            color: var(--primary);
+        }
+
+        .language-option:hover {
+            background-color: var(--primary);
+            color: var(--background);
+        }
+
+        .flag {
+            font-size: 1.2em;
+        }
+
+        .lang-text {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -466,22 +536,60 @@
     </footer>
 </body>
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialisation de la langue
+        window.lang = 'en';
+
+        // Menu Sticky
+        const menu = document.querySelector(".Menu");
+        const closeMenu = document.querySelectorAll(".Navigation");
+        const lang_button_container = document.querySelector(".language-switcher");
+        const removeAct = document.querySelector(".Menu");
+        
+        // Appliquer la langue initiale
+        setLanguage('en');
+    });
+
     // Menu Mobile
     function menuMobile() {
-        const mobile = document.querySelectorAll(".Navigation"); // Use querySelectorAll to get a NodeList
+        const mobile = document.querySelectorAll(".Navigation");
         const menuAct = document.querySelector(".Menu");
         const lang_button_container = document.querySelector(".language-switcher");
-        var lang = window.lang;
+        const lang = window.lang;
 
         mobile.forEach(function(element) {
-            target_lang = element.getAttribute("data-lang");
-            console.log(target_lang);
-            if (lang == target_lang) {
+            const target_lang = element.getAttribute("data-lang");
+            if (lang === target_lang) {
                 element.classList.toggle("active");
             }
         });
         menuAct.classList.toggle("act");
         lang_button_container.classList.toggle("upward");
+    }
+
+    // Language Switcher
+    function toggleLanguageMenu() {
+        const menu = document.querySelector('.language-menu');
+        menu.classList.toggle('show');
+    }
+
+    function setLanguage(lang) {
+        window.lang = lang;
+        const elements = document.querySelectorAll('[data-lang]');
+        
+        elements.forEach(element => {
+            if (element.getAttribute('data-lang') === lang) {
+                element.style.display = '';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+
+        // Fermer le menu après la sélection
+        const menu = document.querySelector('.language-menu');
+        if (menu) {
+            menu.classList.remove('show');
+        }
     }
 
 </script>
