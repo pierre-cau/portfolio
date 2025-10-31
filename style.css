@@ -66,8 +66,8 @@ body::-webkit-scrollbar-thumb {
 .language-switcher {
     position: fixed;
     top: 35px;
-    right: 150px; /* Plus loin du bouton hamburger */
-    z-index: 99999; /* Z-index plus élevé pour être sûr qu'il soit au-dessus de tout */
+    right: 180px; /* Augmenté l'espace avec le bouton menu */
+    z-index: 99999;
     background-color: transparent;
     border-radius: 6px;
     padding: 2px;
@@ -100,7 +100,10 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: none;
     overflow: hidden;
-    z-index: 999999; /* Match parent z-index */
+    z-index: 999999;
+    min-width: 120px;
+    width: auto;
+    border: 1px solid var(--primary-color);
 }
 
 .language-menu.show {
@@ -115,6 +118,8 @@ body::-webkit-scrollbar-thumb {
     cursor: pointer;
     transition: background-color 0.2s ease;
     color: var(--primary-color);
+    width: auto;
+    white-space: nowrap;
 }
 
 .language-option:hover {
@@ -133,15 +138,65 @@ body::-webkit-scrollbar-thumb {
     z-index: 4;
 }
 
+/* Écrans larges à moyens */
+@media (max-width: 1080px) {
+    .language-switcher {
+        right: 160px; /* Un peu plus proche mais toujours avec de la marge */
+    }
+}
+
+/* Écrans moyens */
+@media (max-width: 900px) {
+    .language-switcher {
+        right: 120px;
+        scale: 0.9; /* Légèrement plus petit */
+    }
+}
+
+/* Écrans plus petits */
 @media (max-width: 837px) {
     .language-switcher {
         top: 20px;
-        right: 80px; /* Garde une distance avec le bouton hamburger */
+        right: 100px; /* Augmenté pour éviter le chevauchement */
         bottom: auto;
+        position: fixed;
+        scale: 0.85; /* Encore plus petit pour les petits écrans */
+    }
+
+    .language-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: auto;
+        min-width: 120px;
+        max-width: 200px;
+        background-color: var(--tertiary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .language-option {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .language-option:last-child {
+        border-bottom: none;
     }
 
     .Menu {
-        padding-right: 120px; /* Espace pour le sélecteur de langue */
+        padding-right: 140px; /* Augmenté pour plus d'espace */
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 400px) {
+    .language-switcher {
+        right: 90px;
+        scale: 0.8;
+    }
+    
+    .Menu {
+        padding-right: 120px;
     }
 }
 
@@ -215,13 +270,50 @@ section {
     height: var(--section-height);
 }
 
-.About .Contact .Experiences .Projects{
+.About .Contact .Experiences .Projects {
     height: auto !important;
     min-height: var(--section-height);
 }
 
 .Projects {
     padding-bottom: 200px;
+}
+
+@media (orientation: portrait) {
+    .About, .Contact, .Experiences, .Projects {
+        padding: 40px 20px;
+    }
+
+    .About {
+        padding-bottom: 60px;
+    }
+
+    .Projects {
+        padding-bottom: 100px;
+    }
+
+    .Info_Image {
+        margin: 0 auto;
+    }
+
+    .Info_Text {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    .Infos {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .Contact_Form {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .Contact_Content {
+        flex-direction: column;
+    }
 }
 
 .Mobile_Bar {
@@ -1069,6 +1161,104 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 }
 
 /* Responsive Mode */
+/* Pour les écrans en mode portrait */
+@media (orientation: portrait) {
+    .Content {
+        flex-direction: column;
+        padding-top: 80px;
+        min-height: 100vh;
+    }
+
+    .Text {
+        margin-right: 0;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .Image {
+        transform: scale(0.8);
+    }
+
+    .Photo {
+        margin: 0 auto;
+    }
+
+    .Square1, .Square2 {
+        display: none;
+    }
+
+    .Social_Medias {
+        position: relative;
+        margin: 20px auto;
+        justify-content: center;
+    }
+
+    .Timeline-container {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+
+    .Timeline-item {
+        flex-direction: column;
+    }
+
+    .Timeline-content {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .Timeline-logo {
+        margin: 0 auto;
+    }
+
+    .Timeline-location {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 10px auto;
+        width: fit-content;
+    }
+
+    .All_Projects {
+        padding: 0 20px;
+    }
+
+    .Group_Service {
+        width: 100%;
+        margin: 20px 0 !important;
+    }
+}
+
+/* Pour les écrans en mode paysage */
+@media (orientation: landscape) {
+    .Content {
+        flex-direction: row;
+        height: auto;
+        min-height: 80vh;
+    }
+
+    .Text {
+        margin-right: 200px;
+    }
+
+    .Timeline-container {
+        max-width: 800px;
+    }
+
+    .Timeline-item {
+        flex-direction: row;
+    }
+
+    .All_Projects {
+        flex-direction: row;
+    }
+
+    .Group_Service {
+        width: var(--default-width);
+    }
+}
+
 @media (max-width: 1080px) {
     /*Laptop*/
     [data-anime="top"] {
