@@ -112,6 +112,11 @@
     </div>
 
     <section class="Home">
+        <!-- Traits décoratifs supplémentaires -->
+        <span class="decorative-line line-1" data-anime="line"></span>
+        <span class="decorative-line line-2" data-anime="line"></span>
+        <span class="decorative-line line-3" data-anime="line"></span>
+        
         <div class="Menu">
             <h1><a href="https://github.com/pierre-cau" class="Logo"><img src="/portfolio/assets/img/icons/logo_remove_bg.png" alt="Logo"></a></h1>
             <div class="Mobile_Bar" onclick="menuMobile()"><i class="fa-solid fa-bars"></i></div>
@@ -135,7 +140,7 @@
             </ul>
         </div>
 
-        <div class="Content" data-anime="down">
+        <div class="Content" data-anime="down" id="home">
             <div class="Text" data-lang="en">
                 <h1>Pierre<br/>Cau</h1>
 
@@ -163,17 +168,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="Circles">
-            <div class="Circle_Left"></div>
-            <div class="Circle_Right"></div>
-        </div>
     </section>
     
     <section class="About" id="About">
-        <div class="About_Circle">
-            <div class="CircleTop"></div>
-        </div>
 
         <div class="Informations">
             <div class="Info_Image" data-anime="left">
@@ -190,48 +187,116 @@
                     <h1 data-lang="fr">A PROPOS DE MOI</h1>
                 </div>
 
-                <div class="Infos" data-lang="en">
-                    <h1>Hello, I'm Pierre Cau...</h1>
-                    <p>a french engineering student at <b>"Ecole Centrale de Lyon"</b>.<br><br>
-                      Roughly speaking, one could say that I'm a computer science student.
-                      Nonetheless, I'm also interested in many other fields such as <b>physics</b>, <b>mathematics</b>, <b>electronics</b>, <b>mechanics</b> and so on.
-                      Indeed, since my school is a generalist one, I'm studying all these fields at the same time !<br><br>
-                    
-                      Recently, I've delved into the world of energy through my two previous internships, which I found <b>incredibly inspiring</b>. 
-                      This field, with its <b>complex challenges</b> and <b>transformative potential</b>, represents a crucial sector for the future. 
-                      The energy transition is a <b>monumental shift</b>, and I am deeply motivated to be part of this movement, contributing to the solutions that will shape tomorrow’s world.<br><br>
-                    </p>
-                </div>
-                <div class="Infos" data-lang="fr">
-                    <h1>Bonjour, je suis Pierre Cau...</h1>
-                    <p>un étudiant ingénieur français à l'<b>"Ecole Centrale de Lyon"</b>.<br><br>
-                      À première vue, on pourrait me définir comme un étudiant en informatique.
-                      Néanmoins, je suis tout aussi passioné par de nombreux autres domaines tels que la <b>physique</b>, les <b>mathématiques</b>, l'<b>électronique</b>, la <b>mécanique</b>, l'<b>électrique</b> et bien d'autres encore.
-                      Puisque mon école est une école généraliste, j'étudie en réalité tous ces domaines en même temps !<br><br>
+            <div class="Infos" data-lang="en">
+                <h1>Hello, I'm Pierre Cau</h1>
+                <p>
+                    A <b>recent graduate</b> from <b>"École Centrale de Lyon"</b>, I'm an engineer driven by curiosity and a passion for tackling challenges.
+                    My multidisciplinary background spans <b>computer science</b>, <b>physics</b>, <b>mathematics</b>, and beyond, teaching me one thing:
+                    <i>The more you explore, the more you realize how much there's still to learn.</i><br><br>
 
-                      À travers mes trois stages précédents dans le secteur de l'énergie chez <b>EDF SEI</b>, <b>CORESO</b> et <b>RTE</b>, j'ai découvert un domaine que je trouve <b>incroyablement inspirant</b>.
-                      Ce secteur, avec ses <b>défis techniques complexes</b> et son <b>impact sociétal</b>, joue un rôle crucial dans l'élaboration de notre avenir.
-                      La transition énergétique représente à la fois un <b>défi monumental</b> et une <b>opportunité extraordinaire</b>. Je suis profondément motivé à contribuer aux solutions innovantes qui aideront à construire un système énergétique plus durable et plus efficace.<br><br>
-                    </p>
-                </div>
-                <button class="Info_Button" title="Download CV" onclick="toggleCVButtons()" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
-                <button class="Info_Button" title="Télécharger CV" onclick="toggleCVButtons()" data-lang="fr"><i class="fa-solid fa-download"></i>TÉLÉCHARGER MON CV</button>
+                    I discovered the <b>energy sector</b> through my experiences, and it was love at first sight: a field where every technical innovation can have a real impact on our future.
+                    My goal? <b>To be part of this collective adventure</b>, bringing my skills to the table with seriousness and passion — because the energy transition is everyone's business.<br><br>
 
-                <div id="cv-buttons" class="extra-buttons cv-buttons" style="display: none;">
-                    <button onclick="openCV('en')">EN</button>
-                    <button onclick="openCV('fr')">FR</button>
-                </div>
+                    When I'm not working on technical projects, you'll likely find me <b>on the water</b>.
+                    Sailing is more than a hobby for me — it's a school of life, teaching patience, adaptability, teamwork, and perseverance.
+                </p>
+                <blockquote class="marine-quote">
+                    « The pessimist complains about the wind; the optimist expects it to change; the realist adjusts the sails. »
+                    <footer>— William Arthur Ward</footer>
+                </blockquote>
+                <p>
+                    In short : I'm <b>curious, determined, and open-minded</b>, believing that even small actions can make a difference.
+                </p>
+            </div>
+
+            <div class="Infos" data-lang="fr">
+                <h1>Bonjour, je suis Pierre Cau</h1>
+                <p>
+                    Diplômé de l'<b>"École Centrale de Lyon"</b>, je suis un ingénieur animé par la curiosité et le goût des défis.
+                    Mon parcours pluridisciplinaire, entre <b>informatique</b>, <b>physique</b>, <b>mathématiques</b> et bien d'autres domaines, m'a appris une chose :
+                    <i>Plus on explore, plus on réalise l'immensité de ce qu'il reste à découvrir.</i><br><br>
+
+                    J’ai découvert le secteur de <b>l’énergie</b> à travers mes expériences, et c’est un coup de cœur : un domaine où chaque innovation technique peut avoir un impact réel sur notre avenir.
+                    Mon but ? <b>Participer à cette aventure collective</b>, en apportant ma pierre à l’édifice (sans mauvais jeu de mots) avec sérieux et passion — parce que la transition énergétique, c’est l’affaire de tous.<br><br>
+
+                    En dehors du bureau, vous me trouverez probablement <b>sur l'eau</b>.
+                    La voile, pour moi, c'est bien plus qu'une passion : c'est une école de vie où l'on apprend (liste non exhaustive) la patience, l'adaptation, l'esprit d'équipe et la persévérance.
+                </p>
+                <blockquote class="marine-quote">
+                    « Le pessimiste se plaint du vent, l'optimiste espère qu'il va changer, le réaliste ajuste ses voiles. »
+                    <footer>— William Arthur Ward</footer>
+                </blockquote>
+                <p>
+                    En résumé : je suis <b>curieux, déterminé et ouvert</b>, convaincu que chaque action, même modeste, peut faire la différence.
+                </p>
+            </div>
+
+            <style>
+                .marine-quote {
+                    font-style: italic;
+                    font-size: 0.9em;
+                    color: #a1d7fb;
+                    border-left: 3px solid #a1d7fb;
+                    padding-left: 15px;
+                    margin: 20px 0;
+                    text-align: center;
+                }
+                .marine-quote footer {
+                    font-size: 0.8em;
+                    font-style: normal;
+                    color: #b6deff;
+                    margin-top: 5px;
+                }
+                b { 
+                    color: #00458a;
+                }
+            </style>
+
+                <button class="Info_Button" title="Download CV" onclick="openCVModal()" data-lang="en"><i class="fa-solid fa-download"></i>DOWNLOAD CV</button>
+                <button class="Info_Button" title="Télécharger CV" onclick="openCVModal()" data-lang="fr"><i class="fa-solid fa-download"></i>TÉLÉCHARGER MON CV</button>
 
                 
             </div>
         </div>
     </section>
+
+    <!-- CV Modal -->
+    <div id="cvModal" class="cv-modal">
+        <div class="cv-modal-overlay" onclick="closeCVModal()"></div>
+        <div class="cv-modal-content">
+            <div class="cv-modal-header">
+                <h2 data-lang="en">Choose your language</h2>
+                <h2 data-lang="fr">Choisissez votre langue</h2>
+                <button class="cv-modal-close" onclick="closeCVModal()" title="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="cv-modal-body">
+                <div class="cv-option" onclick="downloadCV('en')">
+                    <div class="cv-flag">🇬🇧</div>
+                    <div class="cv-info">
+                        <h3 data-lang="en">English Version</h3>
+                        <h3 data-lang="fr">Version Anglaise</h3>
+                        <p data-lang="en">Download CV in English</p>
+                        <p data-lang="fr">Télécharger le CV en Anglais</p>
+                    </div>
+                    <i class="fa-solid fa-download"></i>
+                </div>
+                <div class="cv-option" onclick="downloadCV('fr')">
+                    <div class="cv-flag">🇫🇷</div>
+                    <div class="cv-info">
+                        <h3 data-lang="en">French Version</h3>
+                        <h3 data-lang="fr">Version Française</h3>
+                        <p data-lang="en">Download CV in French</p>
+                        <p data-lang="fr">Télécharger le CV en Français</p>
+                    </div>
+                    <i class="fa-solid fa-download"></i>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <section class="Experiences" id="Experiences">
-        <div class="Align_Circle_Top">
-            <div class="Align_Circle"></div>
-        </div>
-
         <div class="Main_Content">
             <div data-anime="top">
                 <div class="Main_Title">
@@ -260,149 +325,149 @@
             </div>
 
             <!-- <div class="List_Experiences">
-                <a href="#" title="Experiences 1" data-anime="Experiences1"><img src="./assets/Project_Banner.png" alt="Project Image"></a>
+                <a href="#" title="Experiences 1" data-anime="Experiences1"><img src="/portfolio/assets/Project_Banner.png" alt="Project Image"></a>
                 
-                <a href="#" title="Experiences 2" data-anime="Experiences2"><img src="./assets/Project_Banner.png" alt="Project Image"></a>
+                <a href="#" title="Experiences 2" data-anime="Experiences2"><img src="/portfolio/assets/Project_Banner.png" alt="Project Image"></a>
             </div> -->
 
             <div class="Timeline" id="Experiences">
               <div class="Timeline-container">
                   
                   <!-- Trait vertical ajouté manuellement -->
-                  <div class="Timeline-line" data-anime="left-slowness"></div>
+                  <div class="Timeline-line"></div>
           
-                  <div class="Timeline-item" data-anime="left-slowness">
+                  <div class="Timeline-item">
                       <a href="https://www.rte-france.com/" target="_blank">
                         <div class="Timeline-logo">
                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/RTE_logo.svg/2048px-RTE_logo.svg.png" alt="RTE">
                         </div>
                       </a>
-                      <div class="Timeline-location" data-anime="left-slowness">
+                      <div class="Timeline-location">
                         <i class="fa-solid fa-map-marker-alt"></i>
                         <span data-lang="en">Lyon, France</span>
                         <span data-lang="fr">Lyon, France</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                      <div class="Timeline-content" data-lang="en">
                           <h2>6-month Internship - <b>RTE</b></h2>
                           <p>Study of electrical losses reduction and analysis of the relationship between Joule losses in the French transmission network and cross-border exchanges.</p>
                           <span>April 2025 - September 2025</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                      <div class="Timeline-content" data-lang="fr">
                             <h2>Stage de 6 mois - <b>RTE</b></h2>
                             <p>Étude de la réduction des pertes électriques et analyse du lien entre les pertes Joule sur le réseau de transport français et les échanges aux frontières.</p>
                             <span>Avril 2025 - Septembre 2025</span>
                       </div>
                   </div>
 
-                  <div class="Timeline-item" data-anime="left-slowness">
+                  <div class="Timeline-item">
                       <a href="https://www.coreso.eu/" target="_blank">
                         <div class="Timeline-logo">
                             <img src="https://www.coreso.eu/wp-content/themes/coreso/images/logo-coreso-pos.png" alt="CORESO">
                         </div>
                       </a>
-                      <div class="Timeline-location" data-anime="left-slowness">
+                      <div class="Timeline-location">
                         <i class="fa-solid fa-map-marker-alt"></i>
                         <span data-lang="en">Brussels, Belgium</span>
                         <span data-lang="fr">Bruxelles, Belgique</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                      <div class="Timeline-content" data-lang="en">
                           <h2>6-month Internship - <b>CORESO</b></h2>
                           <p>Testing an optimization algorithm for remedial actions. Electrical security analyses at the European level.</p>
                           <span>January 2024 - June 2024</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                      <div class="Timeline-content" data-lang="fr">
                             <h2>Stage de 6 mois - <b>CORESO</b></h2>
                             <p>Tests d'un algorithme d'optimisation pour les actions correctives. Analyses de sécurité électrique au niveau européen.</p>
                             <span>Janvier 2024 - Juin 2024</span>
                       </div>
                   </div>
           
-                  <div class="Timeline-item" data-anime="left-slowness">
+                  <div class="Timeline-item">
                       <a href="https://corse.edf.fr/" target="_blank">
                         <div class="Timeline-logo">
                             <img src="https://www.edf.fr/themes/custom/nova/assets/images/00-tokens/logos/images/logo-edf.svg" alt="EDF">
                         </div>
                       </a>
-                      <div class="Timeline-location" data-anime="left-slowness">
+                      <div class="Timeline-location">
                         <i class="fa-solid fa-map-marker-alt"></i>
                         <span data-lang="en">Ajaccio, France</span>
                         <span data-lang="fr">Ajaccio, France</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                      <div class="Timeline-content" data-lang="en">
                           <h2>5-month Internship - <b>EDF SEI</b></h2>
                           <p>Development of decision support tools, data visualization, and optimization of the electrical grid.</p>
                           <span>August 2023 - December 2023</span>
                       </div>
-                      <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                      <div class="Timeline-content" data-lang="fr">
                             <h2>Stage de 5 mois - <b>EDF SEI</b></h2>
                             <p>Développement d'outils d'aide à la décision, visualisation de données, et optimisation du réseau électrique.</p>
                             <span>Août 2023 - Décembre 2023</span>
                       </div>
                   </div>
           
-                  <div class="Timeline-item" data-anime="left-slowness">
+                  <div class="Timeline-item">
                     <a href="https://www.carrefour.fr/" target="_blank">
                       <div class="Timeline-logo">
                           <img src="/portfolio/assets/img/icons/companies/meta-social-default-image-twitter.png" alt="CARREFOUR">
                       </div>
                     </a>
-                    <div class="Timeline-location" data-anime="left-slowness">
+                    <div class="Timeline-location">
                       <i class="fa-solid fa-map-marker-alt"></i>
                       <span data-lang="en">Britanny, France</span>
                       <span data-lang="fr">Bretagne, France</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                    <div class="Timeline-content" data-lang="en">
                         <h2>1-month Internship - <b>Carrefour</b></h2>
                         <p>Head of the drive-through service at a supermarket</p>
                         <span>July 2022 - August 2022</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                    <div class="Timeline-content" data-lang="fr">
                           <h2>Stage de 1 mois - <b>Carrefour</b></h2>
                           <p>Responsable du service drive d'un supermarché</p>
                           <span>Juillet 2022 - Août 2022</span>
                     </div>
                   </div>
 
-                  <div class="Timeline-item" data-anime="left-slowness">
+                  <div class="Timeline-item">
                     <a href="https://www.ec-lyon.fr/" target="_blank">
                       <div class="Timeline-logo">
                           <img src="/portfolio/assets/img/icons/companies/2024-logo-centrale-h-rouge-rvb_tiny.png" alt="Centrale Lyon">
                       </div>
                     </a>
-                    <div class="Timeline-location" data-anime="left-slowness">
+                    <div class="Timeline-location">
                       <i class="fa-solid fa-map-marker-alt"></i>
                       <span data-lang="en">Lyon, France</span>
                       <span data-lang="fr">Lyon, France</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                    <div class="Timeline-content" data-lang="en">
                         <h2>President of the sailing club - <b>Centrale Lyon</b></h2>
                         <p>Management of the club, organization of events, and training of new members.</p>
                         <span>2022 - 2023</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                    <div class="Timeline-content" data-lang="fr">
                           <h2>Président du club de voile - <b>Centrale Lyon</b></h2>
                           <p>Gestion du club, organisation d'événements, et formation des nouveaux membres.</p>
                           <span>2022 - 2023</span>
                     </div>
                   </div>
 
-                  <div class="Timeline-item" data-anime="left-slowness">
+                  <div class="Timeline-item">
                     <a href="https://www.ffvoile.fr" target="_blank">
                       <div class="Timeline-logo">
                           <img src="https://www.ffvoile.fr//ffv/web/AdminNews/multimedia/galeries/ffvoile_2012/minis/FFVoile.jpg" alt="FFV">
                       </div>
                     </a>
-                    <div class="Timeline-location" data-anime="left-slowness">
+                    <div class="Timeline-location">
                       <i class="fa-solid fa-map-marker-alt"></i>
                       <span data-lang="en">Brittany, France</span>
                       <span data-lang="fr">Bretagne, France</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness" data-lang="en">
+                    <div class="Timeline-content" data-lang="en">
                         <h2>Sailing instructor - <b>FFV</b></h2>
                         <p>Training of young and old sailors, organization of regattas, and maintenance of the boats.</p>
                         <span>since 2019</span>
                     </div>
-                    <div class="Timeline-content" data-anime="left-slowness" data-lang="fr">
+                    <div class="Timeline-content" data-lang="fr">
                           <h2>Moniteur de voile - <b>FFV</b></h2>
                           <p>Formation des jeunes et moins jeunes navigateurs, organisation de régates, et entretien des bateaux.</p>
                           <span>depuis 2019</span>
@@ -416,10 +481,6 @@
     </section>
     
     <section class="Projects" id="Projects">
-        <div class="Align_Circle_Top">
-            <div class="Align_Circle Serv"></div>
-        </div>
-
         <div class="Main_Content">
             <div data-anime="top">
                 <div class="Main_Title Alternative_Title" >
@@ -476,10 +537,6 @@
     </section>
     
     <section class="Contact" id="Contact">
-        <div class="Align_Circle_Top">
-            <div class="Align_Circle"></div>
-        </div>
-
         <div class="Main_Content" data-anime="top">
             <div class="Main_Title Adjust">
                 <div class="Main_Border_Title"></div>
@@ -530,7 +587,7 @@
     </section>
     
     <footer class="Footer">
-        <p>Copyright © 2024 <strong>CAU Pierre.</strong> All right reserved. <i>Last update: {{ last_commit_date }}</i></p>
+        <p>Copyright © 2024 <strong>CAU Pierre.</strong> All right reserved. <i>Last update: 2025-10-31</i></p>
     </footer>
 </body>
 <script>

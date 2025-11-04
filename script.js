@@ -54,8 +54,25 @@ document.addEventListener('DOMContentLoaded', function() {
         target.forEach(function(element) {
             if (windowTop > element.offsetTop) {
                 element.classList.add(animationClass);
+                // Ajouter la classe animate aux parents pour les pseudo-éléments
+                if (element.classList.contains('Text') || 
+                    element.classList.contains('Image') || 
+                    element.classList.contains('Content')) {
+                    element.classList.add(animationClass);
+                }
+                // Ajouter la classe aux sections Home
+                const homeSection = element.closest('.Home');
+                if (homeSection) {
+                    homeSection.classList.add(animationClass);
+                }
             } else {
                 element.classList.remove(animationClass);
+                // Retirer la classe animate des parents
+                if (element.classList.contains('Text') || 
+                    element.classList.contains('Image') || 
+                    element.classList.contains('Content')) {
+                    element.classList.remove(animationClass);
+                }
             }
         });
     }
@@ -105,16 +122,30 @@ function setLanguage(lang) {
     }
 }
 
-// CV Management
-function toggleCVButtons() {
-    const cvButtons = document.getElementById('cv-buttons');
-    cvButtons.style.display = cvButtons.style.display === 'none' ? 'flex' : 'none';
+// CV Management - Modal
+function openCVModal() {
+    const modal = document.getElementById('cvModal');
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
 }
 
-function openCV(lang) {
-    window.open(`./documents/cv-${lang}.pdf`, '_blank');
-    toggleCVButtons();
+function closeCVModal() {
+    const modal = document.getElementById('cvModal');
+    modal.classList.remove('show');
+    document.body.style.overflow = ''; // Restore scrolling
 }
+
+function downloadCV(lang) {
+    window.open(`./documents/cv-${lang}.pdf`, '_blank');
+    closeCVModal();
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeCVModal();
+    }
+});
 
 // Mobile Menu
 function menuMobile() {
