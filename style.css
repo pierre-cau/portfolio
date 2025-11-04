@@ -154,13 +154,14 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (orientation: portrait), (max-width: 837px) {
     .language-switcher {
-        top: 20px;
-        right: 70px;
-        transform: scale(0.9);
+        top: 15px;
+        right: 15px;
+        transform: scale(0.85);
+        z-index: 100000;
     }
 
     .Menu {
-        padding-right: 60px;
+        padding-right: 15px;
     }
 
     .language-menu {
@@ -189,6 +190,181 @@ body::-webkit-scrollbar-thumb {
 
     .Mobile_Bar {
         margin-right: 10px;
+    }
+}
+
+/* Mode paysage - Ajustements généraux */
+@media screen and (orientation: landscape) {
+    /* Forcer la disposition horizontale pour Home */
+    .Content {
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    
+    .Text {
+        order: 1;
+    }
+    
+    .Image {
+        order: 2;
+    }
+    
+    /* Forcer la disposition horizontale (pas de column) pour About */
+    .Informations {
+        flex-direction: row !important;
+        align-items: center !important;
+    }
+    
+    .Info_Image {
+        order: 0 !important;
+        margin-left: 60px !important;
+        margin-bottom: 0 !important;
+    }
+    
+    .Info_Text {
+        order: 0 !important;
+        margin-left: 40px !important;
+        align-items: flex-start !important;
+    }
+    
+    .About_Title {
+        justify-content: flex-start !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Réduction de l'image de profil et des rectangles About */
+    .Info_Image img {
+        width: 220px !important;
+    }
+    
+    .Rectangle_Info1, .Rectangle_Info2, .Rectangle_Info3 {
+        width: 55px !important;
+        height: 350px !important;
+    }
+}
+
+/* Mode paysage - Ajustements pour très petits écrans (ex: 800x360) */
+@media screen and (orientation: landscape) and (max-height: 400px) {
+    .Home {
+        padding: 0 0 20px 0 !important;
+    }
+
+    .Social_Medias{
+        bottom: 10px !important;
+    }
+    
+    .Content {
+        min-height: auto !important;
+        height: auto !important;
+        padding-top: 40px !important;
+    }
+    
+    .Text {
+        margin-right: 200px !important;
+    }
+    
+    .Text h1 {
+        font-size: 32px !important;
+        line-height: 38px !important;
+    }
+    
+    .Text p {
+        font-size: 12px !important;
+        margin-top: 10px !important;
+    }
+    
+    .Photo, .Square1, .Square2 {
+        width: 130px !important;
+        height: 140px !important;
+    }
+    
+    .Photo {
+        margin-top: -30px !important;
+    }
+    
+    #home{
+        padding-top: 50px !important;
+        height: fit-content !important;
+        padding-bottom: 20px !important;
+    }
+    
+    /* Réduction maximale pour About */
+    .Info_Image img {
+        width: 140px !important;
+    }
+    
+    .Rectangle_Info1, .Rectangle_Info2, .Rectangle_Info3 {
+        width: 35px !important;
+        height: 220px !important;
+    }
+    
+    .Info_Image {
+        margin-left: 30px !important;
+    }
+    
+    .Info_Text {
+        margin-left: 20px !important;
+    }
+}
+
+/* Mode paysage - Ajout de padding pour la section Home */
+@media screen and (orientation: landscape) and (max-height: 700px) {
+    .Home {
+        padding: 0 0 40px 0 !important;
+    }
+    
+    .Content {
+        min-height: auto !important;
+        height: auto !important;
+    }
+    
+    .Text {
+        margin-right: 300px;
+    }
+    
+    .Text h1 {
+        font-size: 42px !important;
+        line-height: 50px !important;
+    }
+    
+    .Text p {
+        font-size: 14px !important;
+    }
+    
+    .Photo, .Square1, .Square2 {
+        width: 180px !important;
+        height: 190px !important;
+    }
+    
+    .Photo {
+        margin-top: -40px !important;
+    }
+    
+    #home{
+        padding-top: 80px !important;
+        height: fit-content !important;
+        padding-bottom: 50px !important;
+    }
+    
+    /* Réduction supplémentaire pour petits écrans paysage */
+    .Info_Image img {
+        width: 190px !important;
+    }
+    
+    .Rectangle_Info1, .Rectangle_Info2, .Rectangle_Info3 {
+        width: 45px !important;
+        height: 300px !important;
+    }
+}
+
+@media screen and (orientation: landscape) and (min-height: 701px) {
+    .Home {
+        padding: 0 0 50px 0 !important;
+    }
+    
+    .Content {
+        padding-top: 70px !important;
     }
 }
 
@@ -263,7 +439,8 @@ section {
 /* Home prend toute la hauteur de l'écran */
 .Home {
     background: #FFFFFF;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     padding: 0;
     position: relative;
     overflow: hidden;
@@ -748,7 +925,7 @@ section {
     justify-content: space-between;
     color: var(--primary-color);
     border-radius: 0 0 10px 10px;
-    padding: 35px var(--padding-large);
+    padding: 25px var(--padding-large);
     transition: var(--transition-duration) var(--transition-ease);
     width: -webkit-fill-available;
     z-index: 10;
@@ -863,7 +1040,7 @@ section {
     justify-content: center;
     align-items: center;
     height: 410px;
-    padding-top: 110px;
+    padding-top: 80px;
     position: relative;
     z-index: 1;
 }
@@ -2070,7 +2247,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     .Content {
         flex-direction: column;
         height: 80vh;
-        padding-top: 50px;
+        padding-top: 30px;
     }
 }
 
@@ -2106,7 +2283,8 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     }
 
     .Home {
-        height: 100vh;
+        min-height: 100vh;
+        height: auto;
     }
 
     .About .Contact .Experiences .Projects{
@@ -2192,6 +2370,8 @@ input:-webkit-autofill, textarea:-webkit-autofill {
         align-items: center;
         font-size: 25px;
         cursor: pointer;
+        margin-right: 80px;
+        z-index: 1000;
     }
 
     .Navigation {
@@ -2480,8 +2660,14 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 @media (max-width: 600px) {
     /*Mobile*/
     .Content {
-        padding-top: 20px;
-        height: 80vh;
+        padding-top: 10px;
+        height: auto;
+        min-height: 70vh;
+    }
+
+    .Home {
+        height: auto;
+        min-height: 100vh;
     }
 
     .Circle_Left, .Circle_Right, .CircleTop, .Align_Circle {
@@ -2490,7 +2676,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
 
     /* Ajustement des sections pour mobile */
     section {
-        padding: 50px var(--padding-small) !important;
+        padding: 35px var(--padding-small) !important;
     }
 
     .Home {
@@ -2500,9 +2686,9 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     /* Ajustement des conteneurs avec effet glass pour mobile */
     .About .Informations,
     .Projects .Main_Content {
-        padding: 35px 25px !important;
-        margin: 0 15px;
-        width: calc(100% - 30px) !important;
+        padding: 25px 20px !important;
+        margin: 0 12px;
+        width: calc(100% - 24px) !important;
         max-width: 100% !important;
         background: rgba(255, 255, 255, 0.18) !important;
         backdrop-filter: blur(12px) saturate(140%) !important;
@@ -2677,7 +2863,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     }
 
     .About {
-        padding: 50px var(--padding-small) 60px var(--padding-small) !important;
+        padding: 35px var(--padding-small) 40px var(--padding-small) !important;
         min-height: auto !important;
     }
 
@@ -2686,6 +2872,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
         width: 100%;
         display: flex;
         flex-direction: column;
+        padding-bottom: 20px !important;
         align-items: center;
         padding-bottom: 30px !important;
     }
@@ -2736,7 +2923,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     .Info_Image {
         margin-left: 0 !important;
         margin-top: 10px;
-        margin-bottom: 100px;
+        margin-bottom: 70px;
         transform: scale(0.85);
         display: flex;
         justify-content: center;
@@ -2757,7 +2944,8 @@ input:-webkit-autofill, textarea:-webkit-autofill {
         align-items: center;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
+        margin-top: 0;
     }
 
     .About_Title h1 {
@@ -2803,7 +2991,7 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     }
 
     .Infos h1 {
-        margin: 20px 0 0 0;
+        margin: 12px 0 0 0;
         font-size: 16px !important;
         line-height: 1.4 !important;
         text-align: center;

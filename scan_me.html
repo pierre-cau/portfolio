@@ -11,110 +11,138 @@
     <script src="https://kit.fontawesome.com/84a3786002.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="Home">
-        <div class="Text centered">
+    <section>
+        <div class="content">
             <h1>SCAN ME</h1>
             <p>Scan the QR code to access my website.</p>
-        </div>
-        <div class="ScanMe__container">
-            <div class="ScanMe__container__content">
-                <div class="Image">
-                    <div class="Photo">
-                        <img src="./assets/img/qr-code.png" alt="QR Code">
-                    </div>
-                    <div class="Square1"></div>
-                    <div class="Square2"></div>
-                    <div class="Social_Medias">
-                        <div class="GitHub"><a href="https://github.com/pierre-cau" title="GitHub"><i class="fa-brands fa-github"></i></a></div>
-                        <div class="LinkedIn"><a href="https://www.linkedin.com/in/pierre-cau" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></div>
-                        <div class="Twitter"><a href="https://twitter.com/CauPierre22" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a></div>
-                    </div>
-                </div>
+            <div class="qr-container">
+                <img src="./assets/img/qr-code.png" alt="QR Code">
             </div>
         </div>
     </section>
 </body>
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background: #FFFFFF;
+    }
+
     section {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        min-height: 80vh;
-        gap: 60px;
-        background: var(--tertiary-color);
-    }
-
-    .centered {
-        margin-right: 0px !important;
-        margin-left: 0px !important;
-        display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-height: 100vh;
+        padding: 20px;
     }
 
-    .ScanMe__container {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: var(--min-height);
-        transform: translateX(50px);
-    }
-
-    .ScanMe__container__content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .content {
         text-align: center;
-    }
-    .Image {
-        position: relative;
-        margin-top: 10vh;
-        margin-right: 0px;
-        
-    }
-    .Photo {
-        background: #fff !important;
-        padding: 5px !important;
-        /* we center the content */
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
 
-    .Photo img{
-        width: 210px;
-        height: 210px;
+    h1 {
+        font-size: 60px;
+        font-weight: 700;
+        color: #265283;
+        margin: 0;
     }
 
-    .Photo:hover {
-        cursor: default;
-        transform: none !important;
+    p {
+        font-size: 18px;
+        color: rgba(57, 57, 57, 0.78);
+        margin: 0;
     }
 
+    .qr-container {
+        background: #FFFFFF;
+        padding: 20px;
+        border-radius: 20px;
+        border: 2px solid #265283;
+        box-shadow: 0 4px 15px rgba(38, 82, 131, 0.2);
+    }
+
+    .qr-container img {
+        display: block;
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Mobile */
     @media (max-width: 600px) {
-        .Photo img{
-            width: 160px;
-            height: 160px;
-        }
-        .Photo {
-            padding: 3px !important;
+        h1 {
+            font-size: 48px;
         }
 
-        .ScanMe__container {
-            transform: translateX(10px);
+        p {
+            font-size: 16px;
         }
 
-        .Image {
-            margin-top: 5vh;
-            padding-bottom: 5vh;
+        .qr-container img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .qr-container {
+            padding: 15px;
         }
     }
 
+    /* Mode paysage */
+    @media screen and (orientation: landscape) {
+        .content {
+            gap: 20px;
+        }
 
+        h1 {
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        .qr-container img {
+            width: 180px;
+            height: 180px;
+        }
+
+        .qr-container {
+            padding: 12px;
+        }
+    }
+
+    /* Mode paysage - Très petits écrans */
+    @media screen and (orientation: landscape) and (max-height: 400px) {
+        .content {
+            gap: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        .qr-container img {
+            width: 140px;
+            height: 140px;
+        }
+
+        .qr-container {
+            padding: 10px;
+        }
+    }
 </style>
 </html>
 
